@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#bgGrad)"/>
+  
+  <!-- Outer ring (system health indicator) -->
+  <circle cx="256" cy="256" r="180" stroke="url(#accentGrad)" stroke-width="8" fill="none" opacity="0.3"/>
+  
+  <!-- Inner dashboard circle -->
+  <circle cx="256" cy="256" r="140" stroke="#334155" stroke-width="4" fill="none"/>
+  
+  <!-- Command center crosshairs -->
+  <line x1="256" y1="140" x2="256" y2="200" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="312" x2="256" y2="372" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="140" y1="256" x2="200" y2="256" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="312" y1="256" x2="372" y2="256" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Center target dot -->
+  <circle cx="256" cy="256" r="24" fill="url(#accentGrad)" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="12" fill="#ffffff"/>
+  
+  <!-- Status indicators (3 dots around the circle) -->
+  <circle cx="256" cy="116" r="16" fill="#22c55e"/>
+  <circle cx="376" cy="336" r="16" fill="#22c55e"/>
+  <circle cx="136" cy="336" r="16" fill="#3b82f6"/>
+  
+  <!-- Dashboard bars (bottom left quadrant) -->
+  <rect x="160" y="280" width="16" height="40" rx="4" fill="#3b82f6"/>
+  <rect x="184" y="260" width="16" height="60" rx="4" fill="#3b82f6"/>
+  <rect x="208" y="270" width="16" height="50" rx="4" fill="#3b82f6"/>
+  
+  <!-- Progress arc (top right quadrant) -->
+  <path d="M 310 200 A 70 70 0 0 1 356 256" stroke="#22c55e" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,1 @@
+function s(e){const n=e.some(r=>r.status==="red"),t=e.some(r=>r.status==="yellow");return n?"red":t?"yellow":"green"}function o(e){return[...e].sort((n,t)=>{const r=n.margin??(n.revenue>0?50:0);return(t.margin??(t.revenue>0?50:0))-r})}export{s as c,o as r};
